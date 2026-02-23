@@ -28,7 +28,7 @@ public class SimonGame {
     List<Rectangle> targets;
     Random rand;
     int r;
-    int counter = 36; //счетчик игры
+    int counter = 10; //счетчик игры
     int SIMON = counter;
     double alpha;
     int blinkIndex;
@@ -127,10 +127,10 @@ public class SimonGame {
 
         gc.setGlobalAlpha(1);
 
-                gc.setFill( Color.BLUE );
+                gc.setFill( Color.BLACK );
                 String pointsText = "Собери: " + titles.get(r) + " "+points;
                 gc.fillText( pointsText, 450, 50 );
-                gc.strokeText( pointsText, 450, 50 );
+                //gc.strokeText( pointsText, 450, 50 );
 
                 gc.fillText("Меню", 50, 50);
                 gc.fillText("Осталось собрать: "+counter, 150, 50);
@@ -148,7 +148,7 @@ public class SimonGame {
 
     private void paintFarmer(){
         farmer1 = new Image( getClass().getResourceAsStream("images/farmer1.png") );
-        gc.drawImage(farmer1, 670, 150);
+        gc.drawImage(farmer1, 680, 230);
     }
 
     private void endGame(){
@@ -158,13 +158,13 @@ public class SimonGame {
             gc.setFont( theFont );
             String s = "";
             if (SIMON-points <= 2){
-                s = "Теперь устроим праздник урожая!";
+                s = "Теперь устроим \n праздник урожая!";
             }
             else{
                 s = "Придется еще поработать.";
             }
             gc.fillText("«Ты собрал "+points+" овощей,\n" +
-                    " и при этом "+(SIMON-points)+" ошибок! \n"+s, 720, 100);
+                    " и при этом "+(SIMON-points)+" ошибок! \n"+s, 750, 130);
             timer.stop();
         }
     }

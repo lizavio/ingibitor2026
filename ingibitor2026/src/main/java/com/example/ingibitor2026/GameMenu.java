@@ -22,7 +22,7 @@ public class GameMenu{
     }
 
     private void drawMenu() {
-        gc.setFill(Color.PINK);
+        gc.setFill(Color.AQUA);
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         gc.setFill(Color.BLACK);
         gc.setFont(Font.font(24));
@@ -31,6 +31,7 @@ public class GameMenu{
 
         gc.fillText("1. Игра Саймона \"Собери урожай\"", 300, 260);
         gc.fillText("2. Эффект Струпа \"Найди яйца\"", 300, 320);
+        gc.fillText("3. Игра Go/No-Go \"Посчитай овец\"", 300, 380);
     }
 
     private void handleClick(double x, double y) {
@@ -41,6 +42,10 @@ public class GameMenu{
         if (y > 300 && y < 340) {
             new StroopGame(canvas, controller);
         }
+        if (y > 360 && y < 400) {
+            new GoNoGame(canvas, controller);
+        }
+
     }
 
 }

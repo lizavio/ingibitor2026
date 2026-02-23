@@ -3,6 +3,7 @@ package com.example.ingibitor2026;
 import javafx.application.Platform;
 import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
@@ -15,6 +16,8 @@ public class Controller1 {
     WebEngine engine;
     Timer timer;
     String lastResult = "";
+    @FXML
+    Label l;
 
     @FXML
     public void initialize() {
@@ -75,9 +78,9 @@ public class Controller1 {
         }
     }
     private void onNewResult(String currentTime, String recordTime) {
-        System.out.println("Обновление результатов:");
-        System.out.println("Текущее: " + currentTime);
-        System.out.println("Рекорд: " + recordTime);
+        //l.setText("Обновление результатов:");
+        l.setText("Ваш результат: " + currentTime);
+        //l.setText("Рекорд: " + recordTime);
         Platform.runLater(() -> {
             // update UI
 

@@ -28,7 +28,7 @@ public class StroopGame {
     List<Rectangle> targets;
     Random rand;
     int r, r1;
-    int counter = 40; //счетчик игры
+    int counter = 30; //счетчик игры
     int SIMON = counter;
     double alpha;
     int blinkIndex;
@@ -104,7 +104,7 @@ public class StroopGame {
 
     private void draw(int r, int r1) {
         //очистка холста
-        gc.setFill( new Color(0, 0.8, 0, 0.7) );
+        gc.setFill( new Color(0.5, 0.8, 0.5, 1) );
         gc.fillRect(0,0, canvas.getWidth(),canvas.getHeight());
 
         //картинки в прямоугольниках-целях
@@ -136,7 +136,7 @@ public class StroopGame {
 
     private void paintFarmer(){
         w_farmer = new Image( getClass().getResourceAsStream("images/w_farmer.png") );
-        gc.drawImage(w_farmer, 670, 150);
+        gc.drawImage(w_farmer, 700, 230);
     }
 
     private void endGame(){
@@ -152,7 +152,7 @@ public class StroopGame {
                 s = "Придется еще поискать.";
             }
             gc.fillText("«Ты нашел "+points+" яиц,\n" +
-                    " и при этом "+(SIMON-points)+" ошибок! \n"+s, 720, 100);
+                    " и при этом "+(SIMON-points)+" ошибок! \n"+s, 720, 170);
             timer.stop();
         }
     }
