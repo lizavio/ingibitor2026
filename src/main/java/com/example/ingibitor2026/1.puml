@@ -1,0 +1,45 @@
+@startuml
+
+class SimonGame {
+
+    - gc : GraphicsContext
+    - canvas : Canvas
+    - controller : Controller2
+
+    - points : int
+    - car : Image
+    - tom : Image
+    - bak : Image
+    - cuc : Image
+    - farmer1 : Image
+
+    - targetData1 : Rectangle
+    - targetData2 : Rectangle
+    - targetData3 : Rectangle
+    - targetData4 : Rectangle
+
+    - titles : List<String>
+    - targets : List<Rectangle>
+    - rand : Random
+
+    - r : int
+    - counter : int
+    - SIMON : int
+    - alpha : double
+    - blinkIndex : int
+
+    - timer : AnimationTimer
+    - time1 : long
+    - time2 : long
+    - a : double
+
+    + SimonGame(canvas : Canvas, controller : Controller2)
+
+    - calculate() : void
+    - draw(r : int) : void
+    - menuClick(x : double, y : double) : void
+    - paintFarmer() : void
+    - endGame() : void
+}
+
+@enduml
